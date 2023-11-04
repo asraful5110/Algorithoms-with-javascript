@@ -1,38 +1,23 @@
-let arr = [4,3,88,5,3,3,6,1,4,2,7,56,8,4,3,9];
-
-
-function bubbleSort(arr){
+let arr = [4,5,6,7,8,9];
+function binarySearch(arr,target){
     let len = arr.length;
+    let start = 0;
+    let end = len-1;
+
     for(let i = 0; i < len; i++){
-        for(let j = 0; j <= len; j++){
-            if(arr[i] < arr[j]){
-                let temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
+        let middle = Math.floor(((start + end) / 2));
+      if(arr[middle] === target) return target;
+     if(target < arr[middle]){
+        end = middle-1;
+     }else{
+        start = middle + 1
+     }
     }
-    return arr;
-}
+
+    return -1;
+};
 
 
-let res = bubbleSort(arr);
-
-
-function bubbleSort2(arr){
-let len = arr.length-1;
-for(let i = 0; i < len; i++){
-    for(let j = i+1; j < len; j++){
-      if(arr[i] > arr[j]){
-        let temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-      }
-    }
-}
-return arr;
-}
-
-res = bubbleSort2(arr);
+let res = binarySearch(arr,9);
 
 console.log(res)
