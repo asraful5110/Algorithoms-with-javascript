@@ -21,3 +21,5 @@ function binarySearch(arr,target){
 let res = binarySearch(arr,9);
 
 console.log(res)
+
+console.log("Hello Bangladesh")
